@@ -2,10 +2,11 @@
 Online converter for HEX and RGB Color codes
 
 Need to:
-*Add error checking and messaging
 
-*Add event listeners for button click and return
+**Add error checking and messaging
 
-*Add function to decide HEX or RGB 
+**Add event listeners for button click and return
 
-*Show color selected
+**Add function to decide HEX or RGB 
+
+**Show color selected
