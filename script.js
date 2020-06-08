@@ -20,6 +20,7 @@ userInput.addEventListener("keyup",function(event){
 
 })
 
+
 // function addAfterKeypress (event) {
 // 	input.addEventListener("keypress", function (event){
 // 	   if (input.value.length>0 && event.keyCode === 13)  {                            
