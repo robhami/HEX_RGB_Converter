@@ -1,0 +1,19 @@
+{
+  "name": "hex_rgb_converter",
+  "version": "1.0.0",
+  "description": "Online converter for HEX and RGB Color codes",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robhami/HEX_RGB_Converter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robhami/HEX_RGB_Converter/issues"
+  },
+  "homepage": "https://github.com/robhami/HEX_RGB_Converter#readme"
+}

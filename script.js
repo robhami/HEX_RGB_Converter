@@ -11,29 +11,47 @@ let rgbOutput = [];
 let result = "";
 
 function formSubmit () {
-	//get input value
+//get input value
+	document.getElementById("results").className ="hidden";
 	userInput= document.getElementById("userInput").value;
 	console.log(userInput);
 	checker(userInput);
+// run function to determine CodeType then run relevant conversion
+	rgbOrHex();
+// use createListElement function to add details to results
+	createListElement(result, resultVal);
+	createListElement(userInput, inputVal);
+	createListElement(codeType, codeVal);
+	console.log("result", result);
 	
-	
+// make results visible
+	document.getElementById("results").className ="visible";
+		
+
 }
+	
 
 function checker (inputCheck) {
-	let x = inputCheck.length;
+	console.log("checker");
+	var x = inputCheck.length;
+	console.log(x);
 	
-	if ( /[0-9a-f^#]/i.test(inputCheck) &&  (x===7 || x===9)) {
-		alert("valid entry");
+	if (/[0-9a-f^#]/i.test(inputCheck) && (x===7 || x===9)) {
+		// alert("valid entry");
+		console.log("valid entry");
 		getResult();
 
 	} else {
 		alert("invalid numbers, letters or length");
+		throw("invalid numbers, letters or length");
 		console.log(inputCheck.length);
 		
 	}
 
 }
 
+
+//  
 function getResult () {
 
 	rgbOrHex();
@@ -47,14 +65,14 @@ function getResult () {
 }
 
 
-function dropDown (selectText) {
-	// assign dropdown value to d variable
-	let d=document.getElementById(selectText).text
+// function dropDown (selectText) {
+// 	// assign dropdown value to d variable
+// 	let d=document.getElementById(selectText).text
 
-	//alert(d);
-	//change dropdown value to d variable
-	dropdownMenuButton.textContent = d;
-}
+// 	//alert(d);
+// 	//change dropdown value to d variable
+// 	dropdownMenuButton.textContent = d;
+// }
 
 
 function rgbOrHex () {
@@ -69,6 +87,8 @@ function rgbOrHex () {
 		hexToRgb(userInputNum);
 
 	} else {
+
+		console.log(userInput.length);
 	// otherwise treat as RGB
 		codeType="RGB Colour Code";
 	// split input into 3x 3 digit numbers
@@ -76,6 +96,17 @@ function rgbOrHex () {
 		rgbInput2 = parseInt(userInput.substring(3,6));
 		rgbInput3 = parseInt(userInput.substring(6,9));
 	//create an array with the 3 digit numbers
+
+		if (rgbInput1>255 || rgbInput2>255 || rgbInput3>255) {
+
+			alert ("3 digit RGB greater than 255");
+			throw ("3 digit RGB greater than 255");
+
+		}
+
+		
+
+
 		rgbInputArray.push(rgbInput1, rgbInput2, rgbInput3);
 
 		console.log(rgbInputArray);
@@ -88,6 +119,7 @@ function rgbOrHex () {
 }
 
 function rgbToHex () {
+
 	// reset hexOutput
 		hexOutput="";
 	// take each 3 digit RGB and send to decToHex for decimal to hexidecimal conversion
@@ -98,6 +130,7 @@ function rgbToHex () {
 	// and add # and assign to result		
 			result = "#" + hexOutput;
 			console.log(result);
+			document.getElementById("color1").value = result;
 			return result;
 	}
 
@@ -115,6 +148,7 @@ function decToHex (x) {
 	};
 
 	console.log("hex: ",hex);
+
 	//return hex values to rgbHex	
 	return hex;
 
@@ -139,6 +173,7 @@ function hexToRgb (y) {
 }
 
 function createListElement(outputs, listItem) {
+	result="";
 	// if resultVal childNodes exist (i.e. greater than 2), delete all displayed values
 	if ((resultVal.childNodes.length)>2){
 		deleteListElement(resultVal);
@@ -184,18 +219,4 @@ function deleteListElement(idRemove) {
 }
 
 	
-function formSubmit () {
-//get input value
-	userInput= document.getElementById("userInput").value;
-	console.log(userInput);
-// run function to determine CodeType then run relevant conversion
-	rgbOrHex();
-// use createListElement function to add details to results
-	createListElement(result, resultVal);
-	createListElement(userInput, inputVal);
-	createListElement(codeType, codeVal);
-// make results visible
-	document.getElementById("results").className ="visible";
 
-
-}
