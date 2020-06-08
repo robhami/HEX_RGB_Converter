@@ -17,12 +17,18 @@
 
 <div class="container-fluid">
 	<h2>HEX RGB Code Converter</h2>
+	<p> Enter colour code HEX or RGB. No spaces or separators. </p>
+
 	<div class="input-group mb-3">
-	  <input type="text" class="form-control" placeholder="Enter colour code (HEX or RGB) as a string. No spaces or separators" aria-label="Recipient's username" aria-describedby="button-addon2" id="userInput">
+	  <input type="text" class="form-control" placeholder="Enter colour code (HEX or RGB)" aria-label="Recipient's username" aria-describedby="button-addon2" id="userInput">
 	  <div class="input-group-append">
 	    <button class="btn btn-outline-success" type="button" id="button-addon2" onclick="formSubmit()">Convert</button>
 	  </div>
+
 	</div>
+	  <p> Hex starts with # followed by 6 digits. <br> RGB is 9 digits, each 3 digit block cannot exceed 255.
+	  </p>
+	  <p></p>
 	<!-- <div class = "col col-lg-6 col-md-4 col-sm-12" -->
 		<div id="results" class="invisible">
 			<!-- <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
