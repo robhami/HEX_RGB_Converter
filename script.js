@@ -10,6 +10,27 @@ let hexOutput = "";
 let rgbOutput = [];
 let result = "";
 
+userInput.addEventListener("keyup",function(event){
+
+	if (userInput.value.length>0 && event.keyCode === 13) {
+
+		event.preventDefault();
+		document.getElementById("button-addon2").click();
+	}
+
+})
+
+// function addAfterKeypress (event) {
+// 	input.addEventListener("keypress", function (event){
+// 	   if (input.value.length>0 && event.keyCode === 13)  {                            
+// 	   	formSubmit()
+// 	    }
+// 	  }
+// }
+
+
+
+
 function formSubmit () {
 //get input value
 	document.getElementById("results").className ="hidden";
