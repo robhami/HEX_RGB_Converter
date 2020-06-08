@@ -5,7 +5,7 @@ Need to:
 
 **Add error checking and messaging- DONE
 
-**Add event listeners for button click and return
+**Add event listeners for button click and return- DONE
 
 **Add function to decide HEX or RGB- DONE
 
