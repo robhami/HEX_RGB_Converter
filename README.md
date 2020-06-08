@@ -9,6 +9,6 @@ Need to:
 
 **Add function to decide HEX or RGB- DONE
 
-**Add zero to RGB values less than three digits
+**Add zero to RGB values less than three digits- DONE
 
-**Show color selected
+**Show color selected- DONE
